@@ -168,10 +168,10 @@
                                                                                         </span>
                                                                                         <span class="time">
                                                                                             <span class="segment-direction">departure:</span>
-                                                                                            <span class="hour ng-star-inserted">08:00</span><!---->
+                                                                                            <span class="hour ng-star-inserted">@flt.DepartureDate.ToShortTimeString()</span><!---->
                                                                                             <ins class="sep ng-star-inserted">, </ins><!---->
                                                                                             <span class="day">
-                                                                                                29 Nov (Mon)
+                                                                                                @flt.DepartureDate.ToShortDateString()
                                                                                             </span>
                                                                                         </span>
                                                                                         <!---->
@@ -184,7 +184,7 @@
                                                                                                         <img src="~/Content/TaskContent/images/PK (2).png" width="30" height="30" alt="">
                                                                                                     </div>
                                                                                                     <span class="airline-info">
-                                                                                                        <span class="airline-name">Pakistan Airlines</span>
+                                                                                                        <span class="airline-name">@flt.MarketingAirlineCodeAB</span>
                                                                                                         <span class="qa-segment-airline-name-operated-by ng-star-inserted">operated by Pakistan Airlines</span><!---->
                                                                                                     </span>
                                                                                                 </span>
@@ -192,11 +192,11 @@
                                                                                                     <!---->
                                                                                                     <span class="aircraft jet ng-star-inserted">
                                                                                                         <img src="~/Content/TaskContent/images/aircraft.png" alt="">
-                                                                                                        <span class="name">AirbusA320 (Jet)</span>
+                                                                                                        <span class="name">@flt.OperatingAirline_Code</span>
                                                                                                     </span><!---->
                                                                                                     <span class="time-duration ng-star-inserted">
                                                                                                         <img src="~/Content/TaskContent/images/clock-time.png" alt="">
-                                                                                                        <span class="time">1h 45min</span>
+                                                                                                        <span class="time">@(sp.Hours)h @(sp.Minutes)m</span>
                                                                                                     </span><!---->
                                                                                                 </span>
                                                                                             </div>
@@ -225,8 +225,8 @@
                                                                                                     </div>
                                                                                                 </div><!---->
                                                                                                 <div class="flight-info">
-                                                                                                    <span class="number">Flight number: <strong class="flight-number">302</strong></span>
-                                                                                                    <span>Class: <strong class="service-class"> Economy</strong></span>
+                                                                                                    <span class="number">Flight number: <strong class="flight-number">@flt.FlightNumber</strong></span>
+                                                                                                    <span>Class: <strong class="service-class"> @flt.Cabin</strong></span>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -240,9 +240,9 @@
                                                                                     </span>
                                                                                     <span class="time">
                                                                                         <span class="segment-direction">arrival:</span>
-                                                                                        <span class="hour ng-star-inserted">09:45</span><!----><ins class="sep ng-star-inserted">, </ins><!---->
+                                                                                        <span class="hour ng-star-inserted">@flt.ArrivalDate.ToShortTimeString()</span><!----><ins class="sep ng-star-inserted">, </ins><!---->
                                                                                         <span class="day">
-                                                                                            29 Nov (Mon)
+                                                                                            @flt.ArrivalDate.ToShortDateString()
                                                                                         </span>
                                                                                     </span>
                                                                                     <!---->
@@ -255,7 +255,7 @@
                                                         </div>
                                                         <div class="modal-footer mt-3">
                                                             <button type="button" class="btn btn-dark" data-dismiss="modal" style="padding: 5px 22px;">Close</button>
-                                                            <a href="flight_booking.html" class="btn btn-primary" style="padding: 5px 22px;">Book Now</a>
+                                                            <a href="" class="btn btn-primary" style="padding: 5px 22px;">Book Now</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -388,7 +388,7 @@
                         <div class="row mb-1">
                             <div class="col-md-12">
                                 <div class="top-sec">
-                                    <span>@flt.TotalWithExtras</span>
+                                    <span>@flt.TotalFare</span>
                                     PKR
                                 </div>
                             </div>
